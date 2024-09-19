@@ -11,6 +11,10 @@ class WeatherController extends Controller
    {
       try {
          $lat = $request->input("lat");
+         $client2  = new Client();
+         $client2->get("");
+         print_r("Hello world");
+
          $lon = $request->input("lon");
          $apiKey = env("OPENWEATHER_API_KEY");
          $url = "http://api.openweathermap.org/data/2.5/weather?lat={$lat}&lon={$lon}&appid={$apiKey}&units=metric";
